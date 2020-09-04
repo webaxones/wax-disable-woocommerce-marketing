@@ -2,7 +2,7 @@
 /**
  * Plugin Name: WAX disable woocommerce marketing
  * Plugin URI: https://www.webaxones.com
- * Description: Disable WooCommerce Marketing
+ * Description: Disable WooCommerce Marketing and Marketplace Suggestions
  * Author: Webaxones
  * Author URI: https://www.webaxones.com
  * Version: 1.0
@@ -25,3 +25,9 @@ function wax_disable_woocommerce_admin_features( $features ) {
 	unset( $features[ $marketing ] );
 	return $features;
 }
+
+/**
+ * Disable Marketplace Suggestions
+ */
+
+add_filter( 'woocommerce_allow_marketplace_suggestions', '__return_false' );
