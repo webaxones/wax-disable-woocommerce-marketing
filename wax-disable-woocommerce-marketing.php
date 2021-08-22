@@ -16,18 +16,10 @@ endif;
 /**
  * Disable WooCommerce Marketing
  */
-
 add_filter( 'woocommerce_marketing_menu_items', '__return_empty_array' );
-add_filter( 'woocommerce_admin_features', 'wax_disable_woocommerce_admin_features' );
-
-function wax_disable_woocommerce_admin_features( $features ) {
-	$marketing = array_search( 'marketing', $features, true );
-	unset( $features[ $marketing ] );
-	return $features;
-}
+add_filter( 'woocommerce_admin_features', '__return_empty_array' );
 
 /**
  * Disable Marketplace Suggestions
  */
-
 add_filter( 'woocommerce_allow_marketplace_suggestions', '__return_false' );
